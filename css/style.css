@@ -1,0 +1,449 @@
+/* =====================
+   共通設定
+===================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+
+    background-image: url("../images/city\ 背景.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    color: #222;
+
+    line-height: 1.8;
+}
+
+
+/* =====================
+   ナビゲーション
+===================== */
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    background: rgba(255,255,255,0.9);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    list-style: none;
+
+    padding: 15px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+nav a{
+    font-family: 'DotGothic16', sans-serif;
+}
+
+nav a:hover{
+    color: #3b82f6;
+}
+
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.stage{
+
+    color: #f59e0b;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1{
+
+    font-family: 'DotGothic16', sans-serif;
+
+    font-size: 4rem;
+
+    margin-bottom: 30px;
+
+    color: #FFD700;
+
+    text-shadow:
+        3px 3px 0px #000,
+        0px 0px 15px rgba(0,0,0,0.5);
+}
+
+.hero h2{
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 0px #000,
+        0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.sub-text{
+
+    max-width: 700px;
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 0px #000,
+        0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.scroll-guide{
+
+    margin-top: 50px;
+
+    animation: float 1.5s infinite;
+
+    font-family: 'DotGothic16', sans-serif;
+
+    color: white;
+
+    text-shadow:
+        2px 2px 0px #000,
+        0px 0px 10px rgba(0,0,0,0.5);
+}
+
+
+@keyframes float{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================
+   セクション
+===================== */
+
+.content-section{
+
+    scroll-margin-top: 100px;
+
+    max-width: 1100px;
+
+    margin: 100px auto;
+
+    padding: 40px;
+
+    background: rgba(255,255,255,0.9);
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.content-section h2{
+
+    margin-bottom: 30px;
+
+    font-family: 'DotGothic16', sans-serif;
+}
+
+.content-section h2{
+
+    background: #180614;
+
+    color: white;
+
+    border: 3px solid #facc15;
+
+    border-radius: 0;
+
+    padding: 15px 20px;
+}
+
+/* =====================
+   PROFILE
+===================== */
+
+.profile-container{
+
+    display: flex;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.profile-image{
+
+    width: 250px;
+    height: 250px;
+
+    border: 5px solid #facc15;
+
+    background: #180614;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    box-shadow:
+        5px 5px 0px #000;
+}
+
+.profile-image img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.profile-text p{
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================
+   カード
+===================== */
+
+.card-grid{
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 20px;
+}
+
+.card{
+
+    background: #180614;
+
+    color: white;
+
+    border: 5px solid #60a5fa;
+
+    border-radius: 0;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        6px 6px 0px #0f172a;
+}
+
+.card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+/* =====================
+   フッター
+===================== */
+
+footer{
+    position: relative;
+}
+
+/* 空からレンガ */
+
+footer::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: -200px;
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,1)
+    );
+
+    pointer-events: none;
+}
+
+.ground{
+
+    height: 300px;
+
+    background-image: url("../images/レンガ.png");
+
+    background-repeat: repeat;
+
+    background-size: auto 150px;
+}
+
+/* レンガ上白グラデ */
+
+footer::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 120px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events: none;
+}
+
+/* コピーライト */
+
+.credits{
+
+    background: #111827;
+
+    color: white;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+.credits h3{
+    margin-bottom: 20px;
+}
+
+.credits p{
+    margin: 10px 0;
+}
+
+/* =====================
+   スマホ
+===================== */
+
+@media (max-width: 768px){
+
+    .hero h1{
+        font-size: 2.5rem;
+    }
+
+    .hero h2{
+        font-size: 1.4rem;
+    }
+
+    .profile-container{
+
+        flex-direction: column;
+    }
+
+    nav ul{
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+.achievement-card{
+
+    border: 4px solid gold;
+
+    background: linear-gradient(
+        135deg,
+        #fffce8,
+        #ffe89e
+    );
+
+    color: #111;
+
+    text-align: center;
+}
+
+#message{
+
+    text-align: center;
+}
+
+.achievement-card h3{
+
+    color: #7a5200;
+}
+
+#message p{
+
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+}
